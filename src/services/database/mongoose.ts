@@ -5,6 +5,7 @@ import { logger } from '../logger/winston'
 const databaseConfigurations = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true,
 }
 
 const initializeMongoDB = () => {

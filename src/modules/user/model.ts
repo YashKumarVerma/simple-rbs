@@ -17,6 +17,17 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true,
   },
+
+  age: {
+    type: Number,
+    required: true,
+  },
+
+  password: {
+    type: String,
+    required: true,
+    select: false,
+  },
 })
 
 // export the model and return your UserInterface

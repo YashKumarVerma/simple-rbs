@@ -8,6 +8,7 @@ class HttpException extends Error {
   constructor(code: number, message: string) {
     super(message)
     this.message = message
+    this.name = 'HttpException'
     this.code = code
     Object.setPrototypeOf(this, HttpException.prototype)
   }

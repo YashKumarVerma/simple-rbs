@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express'
-import { BadRequestException } from 'http-exception-transformer/exceptions'
 import { SuccessToResponseMapper } from '../../services/util/response.transformer'
 import { UserController } from './controller'
 import { CreateUserInterface } from './interface'

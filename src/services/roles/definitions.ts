@@ -1,11 +1,12 @@
 import { AccessControl } from 'accesscontrol'
 import { logger } from '../logger/winston'
+import { ROLE } from './types'
 
 const controller = new AccessControl()
 
 /** roles of user in system */
 controller
-  .grant('user')
+  .grant(ROLE.USER)
   .readOwn('profile')
   .updateOwn('profile')
   .deleteOwn('profile')
@@ -16,8 +17,8 @@ controller
 
 /** roles of moderator in system */
 controller
-  .grant('moderator')
-  .extend('user')
+  .grant(ROLE.MOD)
+  .extend(ROLE.USER)
   .readAny('profile')
   .updateAny('profile')
   .readAny('vehicle')
@@ -25,12 +26,11 @@ controller
 
 /** roles of admin in system */
 controller
-  .grant('admin')
-  .extend('moderator')
+  .grant(ROLE.ADMIN)
+  .extend(ROLE.MOD)
   .deleteAny('profile')
   .deleteAny('vehicle')
-  .createAny('user')
-  .createAny('moderator')
+  .createAny('backup')
 
 const roleStatusCheck = () => {
   logger.info(`All roles: ${controller.getRoles()}`)

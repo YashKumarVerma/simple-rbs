@@ -1,4 +1,5 @@
 import mongoose, { Schema } from 'mongoose'
+import { ROLE } from '../../services/roles/types'
 import { UserInterface } from './interface'
 
 const UserSchema: Schema = new Schema({
@@ -27,6 +28,12 @@ const UserSchema: Schema = new Schema({
     type: String,
     required: true,
     select: false,
+  },
+
+  role: {
+    type: String,
+    default: ROLE.USER,
+    enum: [ROLE.ADMIN, ROLE.MOD, ROLE.USER],
   },
 })
 

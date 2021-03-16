@@ -9,7 +9,7 @@ const router = express.Router()
  * declaring user rotues that are nested under the /users scope
  */
 router.get('/', async (req: Request, res: Response) => {
-  const data = await UserController.homepageHandler()
+  const data = await UserController.getAllUsers()
   res.json(SuccessToResponseMapper(data))
 })
 
@@ -28,9 +28,9 @@ router.post('/', async ({ body }, res: Response) => {
 })
 
 /** to delete an old user */
-router.delete('/:id', async (req: Request, res: Response) => {
-  const { id } = req.params
-  const data = await UserController.deleteUser(id)
+router.delete('/:email', async (req: Request, res: Response) => {
+  const { email } = req.params
+  const data = await UserController.deleteUser(email)
   res.json(SuccessToResponseMapper(data))
 })
 

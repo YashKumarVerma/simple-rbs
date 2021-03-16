@@ -26,8 +26,8 @@ class UserService {
   }
 
   /** to delete a user by id */
-  static async deleteUserById(userID: string): Promise<any> {
-    const deleteResponse = await UserSchema.deleteOne({ _id: userID })
+  static async deleteUserByEmail(email: string): Promise<any> {
+    const deleteResponse = await UserSchema.deleteOne({ email })
     return deleteResponse
   }
 }

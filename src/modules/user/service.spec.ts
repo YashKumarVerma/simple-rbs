@@ -62,9 +62,9 @@ describe('user.service', () => {
     })
   })
 
-  describe('.deleteUserById', () => {
+  describe('.deleteUserByEmail', () => {
     it('shoudl be defined', () => {
-      expect(UserService.deleteUserById).not.to.be.undefined
+      expect(UserService.deleteUserByEmail).not.to.be.undefined
     })
   })
 })

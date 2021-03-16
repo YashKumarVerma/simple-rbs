@@ -9,7 +9,7 @@ class UserController {
   }
 
   /** returns list of all users in system */
-  public static homepageHandler(): Promise<Array<UserInterface>> {
+  public static getAllUsers(): Promise<Array<UserInterface>> {
     return UserService.findAll()
   }
 
@@ -36,8 +36,8 @@ class UserController {
   }
 
   /** to delete and old user */
-  public static async deleteUser(id: string): Promise<any> {
-    const deleteResponse = await UserService.deleteUserById(id)
+  public static async deleteUser(email: string): Promise<any> {
+    const deleteResponse = await UserService.deleteUserByEmail(email)
     return deleteResponse
   }
 }

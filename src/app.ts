@@ -1,5 +1,6 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import { HttpExceptionTransformer } from 'http-exception-transformer'
 import { initializeMongoDB } from './services/database/mongoose'
 import { initializeRedis } from './services/database/redis'
 
@@ -25,5 +26,5 @@ app.get('', (req, res) => {
 })
 
 app.use('/users', userRoutes)
-
+app.use(HttpExceptionTransformer)
 export default app

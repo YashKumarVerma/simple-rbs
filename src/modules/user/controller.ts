@@ -1,4 +1,4 @@
-import { HttpException } from '../../services/errors/http.exception'
+import { NotFoundException, BadRequestException } from 'http-exception-transformer/exceptions'
 import { logger } from '../../services/logger/winston'
 import { CreateUserInterface, UserInterface } from './interface'
 import { UserService } from './service'
@@ -18,7 +18,7 @@ class UserController {
     const userDetails = await UserService.findOneByEmail(email)
 
     if (userDetails === null) {
-      throw new HttpException(404, 'User not found')
+      throw new NotFoundException('user not found')
     }
 
     return userDetails
@@ -28,7 +28,7 @@ class UserController {
   public static async createUser(user: CreateUserInterface): Promise<UserInterface> {
     const userdata = await UserService.findOneByEmail(user.email)
     if (userdata !== null) {
-      throw new HttpException(409, 'User Already Registered')
+      throw new BadRequestException('User already exist')
     }
 
     const newUser = await UserService.create(user)

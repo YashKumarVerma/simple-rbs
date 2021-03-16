@@ -1996,6 +1996,11 @@ http-errors@~1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
+http-exception-transformer@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/http-exception-transformer/-/http-exception-transformer-1.1.0.tgz#b601e32c5b8f503620320792d4583f18dd3c7c12"
+  integrity sha512-5Sg9rLza3Iu/vIR8No670sV0cS57rm6IxR2/4HRMEjPTj1rA7/TjCzZCb80S5llb+rIATapb19mh+vLgGXgEzw==
+
 iconv-lite@0.4.24:
   version "0.4.24"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"

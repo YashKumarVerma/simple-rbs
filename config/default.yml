@@ -11,3 +11,9 @@ server:
 
 database:
   string: 'mongodb://127.0.0.1:27017/rbac'
+
+login_token:
+  secret: super-secret
+  expires: 1d
+  issuer: yashkumarverma
+  cookie: rbs_login

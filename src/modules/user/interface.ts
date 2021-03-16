@@ -5,7 +5,8 @@ export interface UserInterface extends Document {
   firstName: string
   lastName: string
   age: number
-  password: string
+  password?: string
+  role: string
 }
 
 export interface CreateUserInterface {

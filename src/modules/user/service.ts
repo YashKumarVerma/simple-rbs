@@ -6,7 +6,7 @@ import { Cache } from '../../services/cache/decorator'
 class UserService {
   /** to list all users */
   static async findAll(): Promise<Array<UserInterface>> {
-    const users = await UserSchema.find().select('-_id -__v')
+    const users = await UserSchema.find().select('-_id -__v -password')
     return users
   }
 
@@ -18,6 +18,7 @@ class UserService {
   }
 
   /** to find a user by email and password for login */
+  @Cache()
   static async findOneByEmailAndPassword(email: string, password: string): Promise<UserInterface> {
     const user = await UserSchema.findOne({ email, password }).select('-id')
     if (user === null) {

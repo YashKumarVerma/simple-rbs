@@ -4,12 +4,13 @@ import { ROLE } from './types'
 
 const controller = new AccessControl()
 
-controller.grant(ROLE.VISITOR).readAny('profile')
+controller.grant(ROLE.VISITOR).readAny('vehicle').createOwn('profile')
 
 /** roles of user in system */
 controller
   .grant(ROLE.USER)
   .extend(ROLE.VISITOR)
+  .readOwn('profile')
   .updateOwn('profile')
   .deleteOwn('profile')
   .createOwn('vehicle')

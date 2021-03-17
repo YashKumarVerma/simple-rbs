@@ -4,10 +4,6 @@ import UserSchema from './model'
 import { CreateUserInterface, UserInterface } from './interface'
 
 class UserService {
-  constructor() {
-    logger.verbose('User Service loaded')
-  }
-
   /** to list all users */
   static async findAll(): Promise<Array<UserInterface>> {
     const users = await UserSchema.find().select('-_id -__v')
@@ -16,7 +12,7 @@ class UserService {
 
   /** to find details of given user by email */
   static async findOneByEmail(email: string): Promise<UserInterface | null> {
-    const user = await UserSchema.findOne({ email })
+    const user = await UserSchema.findOne({ email }).select('-_id')
     return user
   }
 

@@ -1,13 +1,8 @@
 import { NotFoundException, BadRequestException } from 'http-exception-transformer/exceptions'
-import { logger } from '../../services/logger/winston'
 import { CreateUserInterface, UserInterface } from './interface'
 import { UserService } from './service'
 
 class UserController {
-  constructor() {
-    logger.verbose('User Controller Loaded')
-  }
-
   /** returns list of all users in system */
   public static getAllUsers(): Promise<Array<UserInterface>> {
     return UserService.findAll()

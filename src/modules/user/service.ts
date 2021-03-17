@@ -1,5 +1,4 @@
 import { UnAuthorizedException } from 'http-exception-transformer/exceptions'
-import { logger } from '../../services/logger/winston'
 import UserSchema from './model'
 import { CreateUserInterface, UserInterface } from './interface'
 

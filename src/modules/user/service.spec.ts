@@ -8,7 +8,6 @@ import chai from 'chai'
 import { UserService } from './service'
 import { CreateUserInterface } from './interface'
 import UserModel from './model'
-import { NotFoundException } from 'http-exception-transformer/exceptions'
 
 const { expect } = chai
 

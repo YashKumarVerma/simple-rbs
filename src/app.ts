@@ -9,6 +9,7 @@ import { roleStatusCheck } from './services/roles/definitions'
 /** link all modules onto application */
 import UserRoutes from './modules/user/routes'
 import AuthRoutes from './modules/auth/routes'
+import { cookieDecoder } from './services/cookie/decoder'
 
 /** initialize database connections */
 initializeMongoDB()
@@ -30,6 +31,7 @@ app.use(cookieParser())
 app.get('', (req, res) => {
   res.json({ alive: true })
 })
+app.use(cookieDecoder())
 
 app.use('/user', UserRoutes)
 app.use('/auth', AuthRoutes)

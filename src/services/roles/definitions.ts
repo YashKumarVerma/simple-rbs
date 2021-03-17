@@ -37,4 +37,4 @@ const roleStatusCheck = () => {
   logger.info(`All resources: ${controller.getResources()}`)
 }
 
-export { controller as role, roleStatusCheck }
+export { controller as check, roleStatusCheck }

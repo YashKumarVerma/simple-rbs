@@ -17,3 +17,6 @@ login_token:
   expires: 1d
   issuer: yashkumarverma
   cookie: rbs_login
+
+cache:
+  enable: true

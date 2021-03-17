@@ -1,8 +1,9 @@
 import redis from 'redis'
 import { logger } from '../logger/winston'
 
+const client = redis.createClient(6379, '127.0.0.1')
+
 const initializeRedis = () => {
-  const client = redis.createClient(6379, '127.0.0.1')
   client.set('status', 'server up')
   client.get('status', (err: any) => {
     if (err) {
@@ -13,4 +14,4 @@ const initializeRedis = () => {
   })
 }
 
-export { initializeRedis }
+export { initializeRedis, client }

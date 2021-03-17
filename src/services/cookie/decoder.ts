@@ -3,6 +3,7 @@ import config from 'config'
 import { decode, verify } from 'jsonwebtoken'
 import { BadRequestException } from 'http-exception-transformer/exceptions'
 import { logger } from '../logger/winston'
+import { LoginTokenData } from '../../modules/auth/interface'
 
 export const cookieDecoder = () => {
   const middleware = async (req: Request, res: Response, next: NextFunction) => {
@@ -27,8 +28,8 @@ export const cookieDecoder = () => {
         throw new BadRequestException('Invalid token')
       }
 
-      const decodedData = await decode(token)
-      logger.info(JSON.stringify(decodedData))
+      const decodedData = (await decode(token)) as LoginTokenData
+      logger.info(JSON.stringify({ email: decodedData.email, role: decodedData.role }))
       req.body = {
         payload: req.body,
         cookie: decodedData,

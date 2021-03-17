@@ -8,7 +8,7 @@ const router = express.Router()
 
 /** declaring user rotues that are nested under the /users scope */
 router.post('/login', async (req: Request, res: Response) => {
-  const credentials: LogInCredentials = req.body
+  const credentials: LogInCredentials = req.body.payload
   const data = await AuthController.login(credentials)
   res.cookie(config.get('login_token.cookie'), data.token)
   res.json(SuccessToResponseMapper(data))

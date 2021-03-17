@@ -8,7 +8,7 @@ export const resolveRole = (req: Request): string => {
     return ROLE.VISITOR
   }
 
-  if (req.body.cookie.role !== undefined) {
+  if (req.body.cookie.role === undefined) {
     logger.info(`operating as role: ${ROLE.VISITOR}`)
     return ROLE.VISITOR
   }

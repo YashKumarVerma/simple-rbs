@@ -20,7 +20,6 @@ class UserService {
   /** to find a user by email and password for login */
   static async findOneByEmailAndPassword(email: string, password: string): Promise<UserInterface> {
     const user = await UserSchema.findOne({ email, password }).select('-id')
-    console.log(user)
     if (user === null) {
       throw new UnAuthorizedException('Invalid Credentials')
     }

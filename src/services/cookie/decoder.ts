@@ -10,6 +10,10 @@ export const cookieDecoder = () => {
     const token: string = req.cookies[cookieName]
     if (token === undefined) {
       logger.info('cookie.set.false')
+      req.body = {
+        payload: req.body,
+        cookie: false,
+      }
       return next()
     }
     logger.info('cookie.set.true')
@@ -32,6 +36,7 @@ export const cookieDecoder = () => {
     } catch (e) {
       req.body = {
         payload: req.body,
+        cookie: false,
       }
     }
 

@@ -11,7 +11,6 @@ controller
   .grant(ROLE.USER)
   .extend(ROLE.VISITOR)
   .readOwn('profile')
-  .updateOwn('profile')
   .deleteOwn('profile')
   .createOwn('vehicle')
   .readAny('vehicle')
@@ -23,7 +22,6 @@ controller
   .grant(ROLE.MOD)
   .extend(ROLE.USER)
   .readAny('profile')
-  .updateAny('profile')
   .readAny('vehicle')
   .updateAny('vehicle')
 

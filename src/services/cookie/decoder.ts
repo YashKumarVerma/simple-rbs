@@ -17,7 +17,6 @@ export const cookieDecoder = () => {
       }
       return next()
     }
-    logger.info('cookie.set.true')
 
     try {
       const isValidToken = await verify(token, config.get('login_token.secret'), {
@@ -29,7 +28,7 @@ export const cookieDecoder = () => {
       }
 
       const decodedData = (await decode(token)) as LoginTokenData
-      logger.info(JSON.stringify({ email: decodedData.email, role: decodedData.role }))
+      logger.info(`cookie.data.${decodedData.email}.${decodedData.role}`)
       req.body = {
         payload: req.body,
         cookie: decodedData,

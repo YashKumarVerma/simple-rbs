@@ -11,18 +11,19 @@ export const queryCache = (index: string): Promise<string | null> =>
     client.get(index, (err, data: string | null) => {
       /** either there can be error in fetching from redis */
       if (err !== null) {
-        logger.error(`Error fetching item from cache storage`)
+        logger.error(`cache.error`)
         logger.error(err)
         resolve(null)
 
         /** or the data would not be found, aka cache miss */
       } else if (data === null) {
-        logger.info(`Cache miss for ${index}, running db call`)
+        logger.info(`cache.miss.${index}`)
+        logger.info('db.active')
         resolve(null)
 
         /** or the data would be found, aka cache hit */
       } else {
-        logger.info(`Cache hit for ${index}, returning from cache`)
+        logger.info(`cache.hit.${index}`)
         resolve(data)
       }
     })

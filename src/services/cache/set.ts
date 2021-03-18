@@ -5,11 +5,10 @@ export const setCache = (index: string, data: any) =>
   new Promise((resolve) => {
     client.set(index, JSON.stringify(data), (err: any, resp: string) => {
       if (err !== null) {
-        logger.error(`Error setting cache for ${index}`)
+        logger.error(`cache.error.${index}`)
         logger.error(err)
       } else {
-        logger.info(`Cache set for ${index}`)
-        logger.info(resp)
+        logger.info(`cache.set.${index}`)
       }
       resolve(true)
     })

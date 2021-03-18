@@ -9,6 +9,7 @@ import config from 'config'
 import { queryCache } from './query'
 import { setCache } from './set'
 import { getSignature } from './resolver'
+import { logger } from '../logger/winston'
 
 /**
  * @decorator
@@ -38,12 +39,12 @@ function Cache() {
     descriptor.value = async function (...args: any[]) {
       const functionSignature = getSignature(target, name, args)
       const cacheLookup = await queryCache(functionSignature)
-
       /** run original method if cache miss and return data */
       if (cacheLookup === null) {
         const result = await original.apply(this, args)
 
         /** update entry in cache */
+        logger.info(`Attempting to set cache for ${functionSignature}`)
         setCache(functionSignature, result)
         return result
       }

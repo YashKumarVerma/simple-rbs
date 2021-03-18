@@ -2083,10 +2083,10 @@ http-errors@~1.7.2:
     statuses ">= 1.5.0 < 2"
     toidentifier "1.0.0"
 
-http-exception-transformer@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/http-exception-transformer/-/http-exception-transformer-1.1.0.tgz#b601e32c5b8f503620320792d4583f18dd3c7c12"
-  integrity sha512-5Sg9rLza3Iu/vIR8No670sV0cS57rm6IxR2/4HRMEjPTj1rA7/TjCzZCb80S5llb+rIATapb19mh+vLgGXgEzw==
+http-exception-transformer@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/http-exception-transformer/-/http-exception-transformer-1.2.0.tgz#463cf52828abce2c8f5eb076444a5e7108ad85f6"
+  integrity sha512-nXzf2Chu9DnUXwETpsYwyUacsCzjz6OaLPcKCa/mmU04+Miq1kt82Gkc7MKNkSmbAkzn4+0udAUfOBEIktOhDQ==
 
 http-proxy-agent@^4.0.0:
   version "4.0.1"

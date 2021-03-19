@@ -37,6 +37,9 @@ jobs:
         run: npm run lint
 
       - name: running tests
-        run: npm run test
+        run: npm run coverage
         env:
           NODE_ENV: test
+
+      - name: upload coverage reports
+        run: npm run codecov 

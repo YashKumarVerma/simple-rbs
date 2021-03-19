@@ -97,7 +97,6 @@ describe('auth', () => {
       .set(config.get('login_token.cookie'), cookieData)
       .send({ email: user[0].email, password: 'some random passwd' })
       .end(async (err, res) => {
-        console.log(res)
         expect(res.body.error).not.to.be.true
       })
   })

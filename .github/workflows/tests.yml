@@ -31,7 +31,7 @@ jobs:
           redis-version: ${{ matrix.redis-version }}
 
       - name: installing dependencies
-        run: npm ci
+        run: npm install
 
       - name: running linting tests
         run: npm run lint

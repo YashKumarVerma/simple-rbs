@@ -4,7 +4,7 @@ import { ROLE } from './types'
 
 const controller = new AccessControl()
 
-controller.grant(ROLE.VISITOR).readAny('vehicle').createOwn('profile')
+controller.grant(ROLE.VISITOR).createOwn('profile')
 
 /** roles of user in system */
 controller
@@ -12,25 +12,18 @@ controller
   .extend(ROLE.VISITOR)
   .readOwn('profile')
   .deleteOwn('profile')
-  .createOwn('vehicle')
-  .readAny('vehicle')
-  .updateOwn('vehicle')
-  .deleteOwn('vehicle')
 
 /** roles of moderator in system */
 controller
   .grant(ROLE.MOD)
   .extend(ROLE.USER)
   .readAny('profile')
-  .readAny('vehicle')
-  .updateAny('vehicle')
 
 /** roles of admin in system */
 controller
   .grant(ROLE.ADMIN)
   .extend(ROLE.MOD)
   .deleteAny('profile')
-  .deleteAny('vehicle')
   .createAny('backup')
 
 const roleStatusCheck = () => {

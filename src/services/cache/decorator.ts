@@ -1,3 +1,4 @@
+/* eslint-disable func-names */
 /* eslint-disable consistent-return */
 /**
  * @author Yash Kumar Verma <yk.verma2000@gmail.com>

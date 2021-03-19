@@ -5,7 +5,6 @@ import { HttpExceptionTransformer } from 'http-exception-transformer'
 import { initializeMongoDB } from './services/database/mongoose'
 import { initializeRedis } from './services/database/redis'
 import { roleStatusCheck } from './services/roles/definitions'
-import { seedIfNotAlreadySeeded } from './services/seed/users'
 
 /** link all modules onto application */
 import UserRoutes from './modules/user/routes'
@@ -16,7 +15,6 @@ import { cookieDecoder } from './services/cookie/decoder'
 initializeMongoDB()
 initializeRedis()
 roleStatusCheck()
-// seedIfNotAlreadySeeded()
 
 /**
  * Initialize express application to hook all middlewares

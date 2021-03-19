@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+/**
+ * @todo Make this script functional
+ */
 import UserModel from '../../modules/user/model'
 import { logger } from '../logger/winston'
 import { ROLE } from '../roles/types'
@@ -35,7 +40,6 @@ const seedUsers = async () =>
       dummyUser(18, ROLE.ADMIN),
     ]).then((data) => {
       logger.info('Seeding Complete')
-      console.log(data)
       resolve(true)
     })
   })
@@ -47,7 +51,6 @@ const clearUsers = async () =>
 
 export const seedIfNotAlreadySeeded = async () => {
   const userList = await UserModel.findOne({ email: 'seed0@gmai.com' })
-  console.log(userList)
   if (userList === null) {
     /** run seeding script */
     await seedUsers()

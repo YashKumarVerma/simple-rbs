@@ -1,7 +1,7 @@
 /* eslint-disable no-return-assign */
 /* eslint-disable no-unused-expressions */
 
-import { describe, it, before, beforeEach } from 'mocha'
+import { describe, it, before } from 'mocha'
 import chai from 'chai'
 import chaiHttpHandler from 'chai-http'
 import app from '../../src/app'

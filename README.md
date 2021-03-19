@@ -10,7 +10,7 @@ This is a simple demo of an application that utilized role based authentication 
 
 and see the coverage report here : [simple-rbs-coverage.surge.sh](http://simple-rbs-coverage.surge.sh/)
 
-Note that since cache is disabled during tests, the cache service has poor coverage. If you are interesting in manually testing the roles, follow the readme from here. 
+Note that since cache is disabled during tests, the cache service has poor coverage. If you are interesting in manually testing the roles, follow the readme from here. Using this [postman collection](https://documenter.getpostman.com/view/10043948/Tz5v3an4) can ease up the testing process. 
 
 ## Running
 - `yarn install`

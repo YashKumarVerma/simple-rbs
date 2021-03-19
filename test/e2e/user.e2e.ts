@@ -54,12 +54,6 @@ const user = [
   },
 ]
 
-/**
- * Rights with visitor are to only create their own profile, nothing else.
- * controller
- *      .grant(ROLE.VISITOR)
- *      .createOwn('profile')
- */
 describe('users', () => {
   let cookie: string
 

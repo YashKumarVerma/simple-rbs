@@ -2,9 +2,9 @@
 
 import { describe, it } from 'mocha'
 
-import app from '../../src/app'
 import chai from 'chai'
 import chaiHttpHandler from 'chai-http'
+import app from '../../src/app'
 
 chai.use(chaiHttpHandler)
 const { expect } = chai

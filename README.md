@@ -4,7 +4,13 @@
 This is a simple demo of an application that utilized role based authentication mechanism to ensure correct access of data and services. In addition to RBS, we're also implementing a cahce layer to demonstrate how database operations can get a significant performance boost with the right thickness of abstraction.
 
 ## Notes
-- 
+- To automatically test the roles and functioning of the RBS mechanism, we've setup e2e tests. These check and ensure that each role behaves the way they are expected to. Watch all the tests passing 
+  
+[![asciicast](https://asciinema.org/a/400439.svg)](https://asciinema.org/a/400439)
+
+and see the coverage report here : [simple-rbs-coverage.surge.sh](http://simple-rbs-coverage.surge.sh/)
+
+Note that since cache is disabled during tests, the cache service has poor coverage. If you are interesting in manually testing the roles, follow the readme from here. 
 
 ## Running
 - `yarn install`
@@ -17,7 +23,8 @@ The project uses mongodb as a data storage layer and relies on redis for the cac
 To launch a basic container with open ports, run - `docker run -d --name some-redis -p 6379:6379 redis`. Do the same with monngodb instance, and make sure to change the configs in `config/default.yml` to ensure that the connection strings are still valid.
 
 ## Seeding Data
-Since the application has database and cache implement, it is vital that to demo it, there is sufficient data on the system. Refer to whatever method you are using for mongodb, and import the `db.dump.json` file. I'll recommend the Azure extension on VSCode which allows linking local databases too. Everything stays in VSCode.
+@todo
+>Since the application has database and cache implement, it is vital that to demo it, there is sufficient data on the system. Refer to whatever method you are using for mongodb, and import the `db.dump.json` file. I'll recommend the Azure extension on VSCode which allows linking local databases too. Everything stays in VSCode.
 
 
 ## Loggin In

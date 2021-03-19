@@ -10,8 +10,8 @@
     "build": "tsc",
     "start:dev": "nodemon",
     "start:prod": "node ./dist/server.js",
-    "test": "./node_modules/mocha/bin/mocha --require ts-node/register --exit ./test/**/*.ts src/modules/**/*.spec.ts",
-    "coverage": "nyc --reporter=lcov yarn test",
+    "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha --require ts-node/register --exit ./test/**/*.ts src/modules/**/*.spec.ts",
+    "coverage": "NODE_END=test nyc --reporter=lcov yarn test",
     "codecov": "codecov"
   },
   "dependencies": {

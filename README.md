@@ -2,10 +2,12 @@
 
 [![Ensure Build](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/build.yml/badge.svg)](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/build.yml)[![Tests](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/tests.yml/badge.svg)](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/tests.yml)
 
+> A video demo is en-route. Will be posted by 10PM(IST) / 4:30PM (GMT) Sunday,March 21, 2021 
+
 This is a simple demo of an application that utilized role based authentication mechanism to ensure correct access of data and services. In addition to RBS, we're also implementing a cahce layer to demonstrate how database operations can get a significant performance boost with the right thickness of abstraction.
 
 ## Notes
-- To automatically test the roles and functioning of the RBS mechanism, we've setup e2e tests. These check and ensure that each role behaves the way they are expected to. Watch all the tests passing 
+- To automatically test the roles and functioning of the RBS mechanism, we've setup e2e tests. These check and ensure that each role behaves the way they are expected to. Watch all the tests passing.
   
 [![asciicast](https://asciinema.org/a/400439.svg)](https://asciinema.org/a/400439)
 

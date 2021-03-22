@@ -33,7 +33,7 @@ function Cache() {
 
     /** if caching is disabled globally, then end operation right away */
     if (!enable) {
-      return
+      return descriptor
     }
 
     /** executing the method to get the result */

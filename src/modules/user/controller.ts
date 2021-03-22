@@ -21,8 +21,8 @@ class UserController {
 
   /** to create a new user */
   public static async createUser(user: CreateUserInterface): Promise<UserInterface> {
-    const userdata = await UserService.findOneByEmail(user.email)
-    if (userdata !== null) {
+    const userData = await UserService.findOneByEmail(user.email)
+    if (userData !== null) {
       throw new BadRequestException('User already exist')
     }
 

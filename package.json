@@ -14,6 +14,8 @@
     "test:e2e": "NODE_ENV=test ./node_modules/mocha/bin/mocha --require ts-node/register --exit ./test/**/*.ts",
     "coverage": "NODE_END=test nyc --reporter=lcov yarn test",
     "coverage:e2e": "NODE_END=test nyc --reporter=lcov yarn test:e2e",
+    "performance:calculate": "./node_modules/artillery/bin/artillery run -q -o reports/no-cache.json test/performance/artillery.yml",
+    "performance:report": "./node_modules/artillery/bin/artillery report -o reports/no-cache.html reports/no-cache.json",
     "codecov": "codecov"
   },
   "dependencies": {
@@ -45,6 +47,8 @@
     "@types/winston": "^2.4.4",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
+    "artillery": "^1.6.2",
+    "axios": "^0.21.1",
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "codecov": "^3.8.1",
@@ -53,6 +57,7 @@
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.1",
+    "faker": "^5.4.0",
     "mocha": "^8.3.2",
     "nodemon": "^2.0.7",
     "nyc": "^15.1.0",

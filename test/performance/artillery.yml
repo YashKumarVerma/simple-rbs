@@ -1,0 +1,44 @@
+config:
+
+  target: "http://localhost:3000"
+  processor: "./artillery.processor.js"
+  phases:
+    - duration: 10
+      arrivalRate: 5
+      name: "SHORT-RUN: 1 requests for 10 seconds"
+
+    - duration: 10
+      arrivalRate: 10
+      name: "PACE-RUN: 2 requests for 60 seconds"
+
+    - duration: 10
+      arrivalRate: 20
+      name: "WAR: 5 requests for 10 seconds"
+      
+  defaults:
+    headers:
+      x-author: "yashkumarverma"
+      Content-Type: "application/json"
+      Accept: application/json
+
+scenarios:
+    - name: "Register a user"
+      flow:
+        - function: "generateRandomData"
+        - post:
+            url: "/user"
+            json:
+              firstName: "{{ firstName }}"
+              lastName: "{{ lastName }}"
+              email: "{{ email }}"
+              password: "{{ password }}"
+              age: "{{ age }}"
+        - log: "user.new {{ email }}, {{ password }}"
+    - name: "Get User List"
+      flow:
+        - function: "getLoginAccess"
+        - get:
+            url: "/user"
+            headers:
+              Cookie: 'rbs_login={{ token }}'
+        - log: "Shot at rbs_login={{ token }}"

@@ -5,7 +5,15 @@ import { BadRequestException } from 'http-exception-transformer/exceptions'
 import { logger } from '../logger/winston'
 import { LoginTokenData } from '../../modules/auth/interface'
 
+/**
+ * Express Middleware to read cookie data and identify tht user
+ */
 export const cookieDecoder = () => {
+  /**
+   * @param req Request : Express request Object
+   * @param res Response: Express Response object
+   * @param next Next() calls next middleware layer
+   */
   const middleware = async (req: Request, res: Response, next: NextFunction) => {
     const cookieName: string = config.get('login_token.cookie')
     const token: string = req.cookies[cookieName]

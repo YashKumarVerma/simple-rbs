@@ -15,7 +15,7 @@ and see the coverage report here : [simple-rbs-coverage.surge.sh](http://simple-
 
 Note that since cache is disabled during tests, the cache service has poor coverage. If you are interesting in manually testing the roles, follow the readme from here. Using this [postman collection](https://documenter.getpostman.com/view/10043948/Tz5v3an4) can ease up the testing process. 
 
-I'm currently working on testing the cache-enabled-performance, and it's taking a hit beucase there's a lot of serialization and de-serialization going over a single thread. This gives rise to an overhead that reduces the benefits of adding the cache layer.
+I'm currently working on testing the cache-enabled-performance, and it's taking a hit because there's a lot of serialization and de-serialization going over a single thread. This gives rise to an overhead that reduces the benefits of adding the cache layer.
 
 However for large responses, cache gives **significant performance improvements**.
 

@@ -2,9 +2,11 @@
 
 [![Ensure Build](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/build.yml/badge.svg)](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/build.yml)
 [![Tests](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/tests.yml/badge.svg)](https://github.com/YashKumarVerma/simple-rbs/actions/workflows/tests.yml)
-![Docker Pulls](https://img.shields.io/docker/pulls/yashkumarverma/simple-rbs)
+[![Docker Pulls](https://img.shields.io/docker/pulls/yashkumarverma/simple-rbs)](https://hub.docker.com/repository/docker/yashkumarverma/simple-rbs)
 
 Playlist explaining the codebase : [Here](https://www.youtube.com/playlist?list=PLupsfJMkYeYs7sqgUCXI7ePxAdf7_6Trs)
+
+To launch the applicatin, simply run: `docker-compose up`
 
 This is a simple demo of an application that utilized role based authentication mechanism to ensure correct access of data and services. In addition to RBS, we're also implementing a cahce layer to demonstrate how database operations can get a significant performance boost with the right thickness of abstraction.
 

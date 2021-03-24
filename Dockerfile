@@ -27,6 +27,6 @@ ADD . /usr/src/app
 RUN npm run build
 
 # run the server
-CMD ["npm", "run start:prod"] 
+CMD ["npm", "run", "start:prod"] 
 
 EXPOSE 80

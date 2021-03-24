@@ -5,6 +5,7 @@ services:
   service_mongo:
     image: mongo
     container_name: db_mongo
+    command: --quiet --logpath /dev/null
     volumes:
       - ~/docker/mongo-volume:/data/db
     ports:

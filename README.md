@@ -6,7 +6,7 @@
 
 Playlist explaining the codebase : [Here](https://www.youtube.com/playlist?list=PLupsfJMkYeYs7sqgUCXI7ePxAdf7_6Trs)
 
-To launch the applicatin, simply run: `docker-compose up`
+To launch the application, simply run: [`docker-compose up`](https://asciinema.org/a/401842)
 
 This is a simple demo of an application that utilized role based authentication mechanism to ensure correct access of data and services. In addition to RBS, we're also implementing a cahce layer to demonstrate how database operations can get a significant performance boost with the right thickness of abstraction.
 
